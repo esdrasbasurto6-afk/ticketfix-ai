@@ -3,6 +3,16 @@
 // Aquí guardaremos la memoria de toda la charla
 let historialConversacion = [];
 let ticketActivo = true;
+let sessionId = generarSessionId();
+
+// Genera un identificador único de sesión (usa crypto.randomUUID si el navegador lo soporta)
+function generarSessionId() {
+    if (window.crypto && window.crypto.randomUUID) {
+        return window.crypto.randomUUID();
+    }
+    // Fallback simple para navegadores sin soporte de randomUUID
+    return 'sesion-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+}
 
 // Función para actualizar la etiqueta de conexión (arriba)
 function setStatus(message, type = "info") {
@@ -74,11 +84,11 @@ async function enviarMensaje() {
     }
 
     try {
-        // 3. Enviar todo el historial de conversación al servidor local
+        // 3. Enviar todo el historial de conversación al servidor local, junto con el sessionId
         const response = await fetch('/api/agent', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ historial: historialConversacion })
+            body: JSON.stringify({ historial: historialConversacion, sessionId })
         });
 
         const data = await response.json();
@@ -154,7 +164,8 @@ function actualizarPanelTicket(res) {
 function limpiarChat() {
     historialConversacion = [];
     ticketActivo = true;
-    
+    sessionId = generarSessionId(); // Nueva sesión = nuevo estado en el servidor
+
     const chatBox = document.getElementById('chat-box');
     if (chatBox) chatBox.innerHTML = '';
     
@@ -167,7 +178,7 @@ function limpiarChat() {
     if (input) {
         input.disabled = false;
         input.value = '';
-        input.placeholder = "Escribe aquí tu respuesta o problema técnico...";
+        input.placeholder = "Escribe aquí tu problema técnico...";
         input.focus();
     }
     if (btn) btn.disabled = false;
