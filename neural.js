@@ -49,11 +49,49 @@ async function entrenarRedes() {
     modeloPrioridad.add(tf.layers.dense({ units: 4, activation: 'softmax' }));
     modeloPrioridad.compile({ optimizer: 'adam', loss: 'categoricalCrossentropy', metrics: ['accuracy'] });
 
-    // 4. ENTRENAMIENTO
-    await modeloCategoria.fit(entradasX, salidasYCategoria, { epochs: 120, verbose: 1 });
-    await modeloPrioridad.fit(entradasX, salidasYPrioridad, { epochs: 120, verbose: 1 });
+   // 4. ENTRENAMIENTO — con callback explícito para ver accuracy y val_accuracy sin depender del logger automático
+function crearCallbackLog(nombreModelo) {
+    return {
+        onEpochEnd: (epoch, logs) => {
+            // Solo mostramos cada 10 epochs para no saturar la consola, más el primero
+            if ((epoch + 1) % 10 === 0 || epoch === 0) {
+                const acc = logs.acc ?? logs.accuracy;
+                const valAcc = logs.val_acc ?? logs.val_accuracy;
+                console.log(
+                    `[${nombreModelo}] Epoch ${epoch + 1}/120 — accuracy: ${acc?.toFixed(3)} | val_accuracy: ${valAcc?.toFixed(3)}`
+                );
+            }
+        }
+    };
+}
 
-    console.log("✅ Redes Neuronales entrenadas y listas para predecir.");
+const historyCategoria = await modeloCategoria.fit(entradasX, salidasYCategoria, {
+    epochs: 120,
+    validationSplit: 0.15,
+    callbacks: crearCallbackLog('Categoria')
+});
+
+const historyPrioridad = await modeloPrioridad.fit(entradasX, salidasYPrioridad, {
+    epochs: 120,
+    validationSplit: 0.15,
+    callbacks: crearCallbackLog('Prioridad')
+});
+
+// Resumen final claro, para comparar antes/después de agregar más datos
+function mostrarResumenFinal(nombreModelo, history) {
+    const acc = history.history.acc ?? history.history.accuracy;
+    const valAcc = history.history.val_acc ?? history.history.val_accuracy;
+    const ultimo = acc.length - 1;
+    console.log(`\n📊 RESUMEN FINAL [${nombreModelo}]`);
+    console.log(`   accuracy final (entrenamiento): ${acc[ultimo].toFixed(3)}`);
+    console.log(`   val_accuracy final (validación): ${valAcc[ultimo].toFixed(3)}`);
+    if (acc[ultimo] - valAcc[ultimo] > 0.15) {
+        console.log(`   ⚠️ Brecha grande entre accuracy y val_accuracy → señal de sobreajuste (overfitting)`);
+    }
+}
+
+mostrarResumenFinal('Categoria', historyCategoria);
+mostrarResumenFinal('Prioridad', historyPrioridad);
 }
 
 // 5. PREDICCIÓN

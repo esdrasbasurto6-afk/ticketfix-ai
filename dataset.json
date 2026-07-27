@@ -1,238 +1,2002 @@
 [
-  {"texto": "no hay internet en toda la oficina, el wifi se cayo", "categoria": 0, "prioridad": 2},
-  {"texto": "el router principal esta parpadeando en rojo y no hay red", "categoria": 0, "prioridad": 2},
-  {"texto": "el cable de red ethernet no funciona en mi lugar", "categoria": 0, "prioridad": 1},
-  
-  {"texto": "necesitamos mas hojas y toner para la impresora del segundo piso", "categoria": 1, "prioridad": 0},
-  {"texto": "el monitor de mi computadora no enciende, la pantalla esta negra", "categoria": 1, "prioridad": 1},
-  {"texto": "mi teclado y raton dejaron de funcionar, no los reconoce", "categoria": 1, "prioridad": 0},
-  
-  {"texto": "el programa de excel se congela cada vez que abro un archivo pesado", "categoria": 2, "prioridad": 1},
-  {"texto": "me salio una pantalla azul de error en windows y se reinicio", "categoria": 2, "prioridad": 2},
-  {"texto": "el sistema de ventas marca error de base de datos", "categoria": 2, "prioridad": 2},
-  
-  {"texto": "mi cuenta esta bloqueada porque intente poner mi contrasena mal", "categoria": 3, "prioridad": 1},
-  {"texto": "necesito acceso a la carpeta compartida de recursos humanos", "categoria": 3, "prioridad": 0},
-  {"texto": "olvide mi password del correo corporativo, ayuda", "categoria": 3, "prioridad": 1},
-  
-  {"texto": "hola", "categoria": 4, "prioridad": 3},
-  {"texto": "buenos dias necesito ayuda", "categoria": 4, "prioridad": 3},
-  {"texto": "asdfghjkl", "categoria": 4, "prioridad": 3},
-  {"texto": "tengo una duda", "categoria": 4, "prioridad": 3},
-  {"texto": "hey que tal", "categoria": 4, "prioridad": 3},
-  {"texto":"se cayo el internet en toda la oficina nadie puede trabajar","categoria":0,"prioridad":2},{"texto":"no me puedo conectar al wifi de la oficina","categoria":0,"prioridad":1},{"texto":"el cable de red del cubiculo 5 esta flojo y se desconecta","categoria":0,"prioridad":0},{"texto":"el ruter principal se reinicio y no tenemos conexion en ningun lado","categoria":0,"prioridad":2},{"texto":"la señal de wifi en mi oficina esta muy debil casi no agarra","categoria":0,"prioridad":1},{"texto":"no puedo entrar a ninguna pagina web me sale error de conexion en el navegador","categoria":0,"prioridad":1},{"texto":"quisiera un cable de red para mi nuevo escritorio por favor","categoria":0,"prioridad":0},{"texto":"URGENTE toda la empresa sin internet desde hace media hora esto es un caos total","categoria":0,"prioridad":2},{"texto":"el internet esta super lento no puedo ni descargar un pdf chico","categoria":0,"prioridad":1},{"texto":"como me cambio a la red de visitantes de la empresa","categoria":0,"prioridad":0},{"texto":"mi monitor no enciende ya revise el cable de corriente y nada","categoria":1,"prioridad":1},{"texto":"necesito toner para la impresora hp del tercer piso se acabo","categoria":1,"prioridad":0},{"texto":"varias teclas de mi teclado no funcionan la n y la m no responden","categoria":1,"prioridad":1},{"texto":"mi laptop ya no carga la bateria cambie el cargador pero sigue igual","categoria":1,"prioridad":1},{"texto":"la impresora de contabilidad dejo de funcionar y tenemos que imprimir reportes para la direccion hoy mismo","categoria":1,"prioridad":2},{"texto":"el mouse de mi computadora se mueve solo sin que yo lo toque es raro","categoria":1,"prioridad":1},{"texto":"se me callo la portatil y la pantalla quedo quebrada con rayas","categoria":1,"prioridad":1},{"texto":"mi monitor parpadea cada 5 segundos y ya me duele mucho la vista","categoria":1,"prioridad":1},{"texto":"el servidor de impresion no responde ningun equipo de la oficina puede imprimir","categoria":1,"prioridad":2},{"texto":"algunas teclas de mi teclado escriben numeros en vez de letras esta raro","categoria":1,"prioridad":1},{"texto":"excel me marca error de archivo dañado y no puedo abrir mi reporte del mes","categoria":2,"prioridad":1},{"texto":"varias computadoras tienen pantalla azul necesitan soporte urgente","categoria":2,"prioridad":2},{"texto":"windows se actualizo anoche y ahora no me abre el programa de nominas","categoria":2,"prioridad":1},{"texto":"necesito la version mas nueva de office por favor","categoria":2,"prioridad":0},{"texto":"google chrome se cierra solo cada rato sin razon aparente","categoria":2,"prioridad":1},{"texto":"el sistema ERP no deja entrar a nadie sale error 500 en todos los equipos","categoria":2,"prioridad":2},{"texto":"word se cierra de repente cuando le doy guardar y pierdo todo mi trabajo","categoria":2,"prioridad":1},{"texto":"como le hago para instalar adobe acrobat en mi maquina","categoria":2,"prioridad":0},{"texto":"mi pc esta super lenta tarda como 5 minutos en prender y abrir los programas","categoria":2,"prioridad":1},{"texto":"se cayo el servidor de aplicaciones no podemos trabajar nadie en la empresa","categoria":2,"prioridad":2},{"texto":"olvide mi contraseña del correo corporativo y no puedo entrar a mis mensajes","categoria":3,"prioridad":1},{"texto":"el sistema de login no funciona nadie puede acceder a sus cuentas desde las 9 am","categoria":3,"prioridad":2},{"texto":"mi usuario aparece como bloqueado no puedo entrar a nada me pueden ayudar","categoria":3,"prioridad":1},{"texto":"necesito acceso a la carpeta compartida del area de recursos humanos","categoria":3,"prioridad":0},{"texto":"no puedo entrar al portal de empleados con mi usuario y contraseña","categoria":3,"prioridad":1},{"texto":"active directory no responde y nadie puede iniciar sesion en sus equipos","categoria":3,"prioridad":2},{"texto":"quisiera cambiar la contraseña de mi equipo porque ya tiene mucho tiempo la misma","categoria":3,"prioridad":1},{"texto":"me piden permisos para entrar a una carpeta del servidor de ventas","categoria":3,"prioridad":0},{"texto":"mi cuenta se bloqueo despues de las vacaciones me pueden apoyar","categoria":3,"prioridad":1},{"texto":"el vpn no me deja conectar con mi usuario me sale error de autenticacion","categoria":3,"prioridad":1},{"texto":"hola buenos dias","categoria":4,"prioridad":3},{"texto":"auxilio no se que hacer con mi computadora","categoria":4,"prioridad":3},{"texto":"tengo una duda con la compu","categoria":4,"prioridad":3},{"texto":"buenas tardes me pueden ayudar por favor","categoria":4,"prioridad":3},{"texto":"esto no sirve de nada todo esta mal nadie nos apoya","categoria":4,"prioridad":3},{"texto":"necesito hablar urgente con alguien del area de sistemas","categoria":4,"prioridad":3},{"texto":"como estan todos buen dia","categoria":4,"prioridad":3},{"texto":"tengo un problema pero no se como explicarlo bien","categoria":4,"prioridad":3},{"texto":"ayuda x favor es urgente","categoria":4,"prioridad":3},{"texto":"queja todo mal nadie nos hace caso en sistemas estamos abandonados","categoria":4,"prioridad":3},
-  {"texto": "no hay internet en toda la oficina, el wifi se cayo", "categoria": 0, "prioridad": 2},
-  {"texto": "el router principal esta parpadeando en rojo y no hay red", "categoria": 0, "prioridad": 2},
-  {"texto": "el cable de red ethernet no funciona en mi lugar", "categoria": 0, "prioridad": 1},
-  {"texto": "la red corporativa esta super lenta, tardo 10 minutos en abrir un correo", "categoria": 0, "prioridad": 1},
-  {"texto": "se cayo la red, nadie en el piso 3 tiene conexion al servidor", "categoria": 0, "prioridad": 2},
-  {"texto": "mi compu no se conecta al wifi de invitados", "categoria": 0, "prioridad": 1},
-  {"texto": "el modem no prende y no tenemos interne", "categoria": 0, "prioridad": 2},
-  {"texto": "necesito un cable ethernet mas largo para mi escritorio", "categoria": 0, "prioridad": 0},
-  {"texto": "la VPN marca error de conexion y estoy haciendo home office", "categoria": 0, "prioridad": 1},
-  {"texto": "no puedo hacer ping al servidor de base de datos", "categoria": 0, "prioridad": 2},
-
-  {"texto": "necesitamos mas hojas y toner para la impresora del segundo piso", "categoria": 1, "prioridad": 0},
-  {"texto": "el monitor de mi computadora no enciende, la pantalla esta negra", "categoria": 1, "prioridad": 1},
-  {"texto": "mi teclado y raton dejaron de funcionar, no los reconoce", "categoria": 1, "prioridad": 0},
-  {"texto": "la impresora hace un ruido raro y mancha las hojas de tinta", "categoria": 1, "prioridad": 0},
-  {"texto": "se derramo cafe en mi laptop y ya no prende nada", "categoria": 1, "prioridad": 2},
-  {"texto": "el ventilador de la compu suena muy fuerte y se apaga sola", "categoria": 1, "prioridad": 1},
-  {"texto": "mi raton inalambrico no sirve, creo que ya no tiene pila", "categoria": 1, "prioridad": 0},
-  {"texto": "la pantalla parpadea de colores y no me deja ver bien", "categoria": 1, "prioridad": 1},
-  {"texto": "necesito un adaptador hdmi para el proyector de la sala de juntas urgente", "categoria": 1, "prioridad": 1},
-  {"texto": "mi diadema para llamadas no se escucha y tengo junta", "categoria": 1, "prioridad": 1},
-
-  {"texto": "el programa de excel se congela cada vez que abro un archivo pesado", "categoria": 2, "prioridad": 1},
-  {"texto": "me salio una pantalla azul de error en windows y se reinicio", "categoria": 2, "prioridad": 2},
-  {"texto": "el sistema de ventas marca error de base de datos", "categoria": 2, "prioridad": 2},
-  {"texto": "el word se me cerro de la nada y no guarde mi documento", "categoria": 2, "prioridad": 1},
-  {"texto": "el antivirus esta bloqueando el programa de nominas", "categoria": 2, "prioridad": 2},
-  {"texto": "necesito instalar photoshop pero me pide permisos de administrador", "categoria": 2, "prioridad": 0},
-  {"texto": "mi compu esta super lenta desde que se actualizo windows ayer", "categoria": 2, "prioridad": 1},
-  {"texto": "el outlook no me deja mandar correos, se quedan en bandeja de salida", "categoria": 2, "prioridad": 1},
-  {"texto": "el sistema ERP corporativo esta caido para todos los vendedores", "categoria": 2, "prioridad": 2},
-  {"texto": "sale un anuncio de que la licencia de office expiro", "categoria": 2, "prioridad": 1},
-
-  {"texto": "mi cuenta esta bloqueada porque intente poner mi contrasena mal", "categoria": 3, "prioridad": 1},
-  {"texto": "necesito acceso a la carpeta compartida de recursos humanos", "categoria": 3, "prioridad": 0},
-  {"texto": "olvide mi password del correo corporativo, ayuda", "categoria": 3, "prioridad": 1},
-  {"texto": "soy nuevo ingreso y todavia no tengo mi cuenta de sistema creada", "categoria": 3, "prioridad": 1},
-  {"texto": "me dice que no tengo permisos para abrir este archivo en red", "categoria": 3, "prioridad": 1},
-  {"texto": "ocupo que le den de baja la cuenta al empleado que renunció hoy", "categoria": 3, "prioridad": 2},
-  {"texto": "no puedo entrar al portal del empleado, dice usuario incorrecto", "categoria": 3, "prioridad": 1},
-  {"texto": "necesito cambiar mi contraseña del servidor ftp", "categoria": 3, "prioridad": 0},
-  {"texto": "alguien intento entrar a mi cuenta y me llego una alerta de seguridad", "categoria": 3, "prioridad": 2},
-  {"texto": "quien me puede dar acceso al dashboard de finanzas?", "categoria": 3, "prioridad": 0},
-
-  {"texto": "hola", "categoria": 4, "prioridad": 3},
-  {"texto": "buenos dias necesito ayuda", "categoria": 4, "prioridad": 3},
-  {"texto": "asdfghjkl", "categoria": 4, "prioridad": 3},
-  {"texto": "tengo una duda", "categoria": 4, "prioridad": 3},
-  {"texto": "hey que tal", "categoria": 4, "prioridad": 3},
-  {"texto": "auxilio mi maquina no sirve", "categoria": 4, "prioridad": 3},
-  {"texto": "oigan pueden venir a mi lugar por favor?", "categoria": 4, "prioridad": 3},
-  {"texto": "estoy muy molesto con el servicio de sistemas", "categoria": 4, "prioridad": 3},
-  {"texto": "12345 probando el sistema", "categoria": 4, "prioridad": 3},
-  {"texto": "no se que le pasa a esto pero ya me harte", "categoria": 4, "prioridad": 3},
-  {"texto": "la impresora del pasillo central se quedo sin papel y marca error", "categoria": 1, "prioridad": 0},
-  {"texto": "mi teclado numerico dejo de escribir de la nada", "categoria": 1, "prioridad": 0},
-  {"texto": "el monitor secundario parpadea constantemente y se pone en negro", "categoria": 1, "prioridad": 1},
-  {"texto": "la laptop no retiene la bateria y se apaga si desconecto el cargador", "categoria": 1, "prioridad": 2},
-  {"texto": "el escaner de la oficina no se comunica con mi computadora", "categoria": 1, "prioridad": 1},
-  {"texto": "el puerto usb de enfrente del gabinete no reconoce ningun dispositivo", "categoria": 1, "prioridad": 0},
-  {"texto": "la impresora multifuncional dice atasco de papel pero ya revise y no hay nada", "categoria": 1, "prioridad": 1},
-  {"texto": "el boton de encendido de mi CPU esta flojo y batallo para prenderla", "categoria": 1, "prioridad": 1},
-  {"texto": "la camara web integrada de la laptop muestra la imagen totalmente blanca", "categoria": 1, "prioridad": 0},
-  {"texto": "se quemo el multicontacto donde tengo conectada toda la estaciones de trabajo", "categoria": 1, "prioridad": 2},
-  {"texto": "el telefono IP de mi escritorio no tiene tono de llamada", "categoria": 1, "prioridad": 1},
-  {"texto": "la base enfriadora de mi laptop tiro humo y huele a quemado", "categoria": 1, "prioridad": 2},
-  {"texto": "el proyector de la sala principal tiene los colores invertidos y se ve borroso", "categoria": 1, "prioridad": 1},
-  {"texto": "no sirve el click derecho de mi mouse optico", "categoria": 1, "prioridad": 0},
-  {"texto": "la bandeja de la impresora se rompio al intentar meter hojas", "categoria": 1, "prioridad": 0},
-  {"texto": "mi computadora hace un zumbido muy fuerte en la fuente de poder", "categoria": 1, "prioridad": 1},
-  {"texto": "la lectora de tarjetas inteligentes del checador no lee mi gafete", "categoria": 1, "prioridad": 1},
-  {"texto": "el cargador de mi laptop esta echando chispas al conectarlo a la pared", "categoria": 1, "prioridad": 2},
-  {"texto": "la bocina interna del monitor no se escucha nada", "categoria": 1, "prioridad": 0},
-  {"texto": "el cable vga del proyector tiene un pin doblado", "categoria": 1, "prioridad": 0},
-  
-  {"texto": "el excel se traba cada vez que intento aplicar un filtro grande", "categoria": 2, "prioridad": 1},
-  {"texto": "el sistema de nominas se queda congelado en la pantalla de inicio de sesion", "categoria": 2, "prioridad": 2},
-  {"texto": "me sale un mensaje de que mi licencia de windows esta a punto de expirar", "categoria": 2, "prioridad": 0},
-  {"texto": "el correo de outlook no se sincroniza y marca error de conexion con el servidor exchange", "categoria": 2, "prioridad": 1},
-  {"texto": "se actualizo el software de contabilidad y ahora arroja un error fatal al abrir", "categoria": 2, "prioridad": 2},
-  {"texto": "el explorador de archivos se cierra solo cada vez que abro una carpeta compartida", "categoria": 2, "prioridad": 1},
-  {"texto": "no puedo abrir archivos PDF con el acrobat reader, dice que el programa dejo de funcionar", "categoria": 2, "prioridad": 1},
-  {"texto": "el sistema interno de tickets marca error 500 al intentar enviar un reporte", "categoria": 2, "prioridad": 1},
-  {"texto": "la aplicacion de zoom se cierra sola en plena videoconferencia con clientes", "categoria": 2, "prioridad": 1},
-  {"texto": "necesito desinstalar un programa viejo pero me pide una clave de administrador que no tengo", "categoria": 2, "prioridad": 0},
-  {"texto": "el explorador chrome consume toda la memoria ram y se traba la pc", "categoria": 2, "prioridad": 1},
-  {"texto": "aparecio una ventana emergente extraña con alertas de virus en la pantalla", "categoria": 2, "prioridad": 2},
-  {"texto": "el paquete office dice producto sin licencia en todas las aplicaciones", "categoria": 2, "prioridad": 1},
-  {"texto": "al intentar exportar un reporte a excel el sistema manda un error de sintaxis", "categoria": 2, "prioridad": 1},
-  {"texto": "el software de diseño grafico se congela al guardar archivos pesados", "categoria": 2, "prioridad": 1},
-  {"texto": "windows pide reiniciar de forma obligatoria para instalar actualizaciones pendientes", "categoria": 2, "prioridad": 0},
-  {"texto": "el reproductor multimedia corporativo no reproduce los videos de capacitacion", "categoria": 2, "prioridad": 0},
-  {"texto": "la herramienta de respaldos marca error al intentar respaldar la base de datos local", "categoria": 2, "prioridad": 2},
-  {"texto": "el programa de facturacion electronica no valida los timbres fiscales", "categoria": 2, "prioridad": 2},
-  {"texto": "el bloc de notas no me deja guardar cambios por falta de permisos en la ruta", "categoria": 2, "prioridad": 0},
-
-  {"texto": "olvide por completo mi contraseña de acceso al equipo de trabajo", "categoria": 3, "prioridad": 1},
-  {"texto": "necesito que agreguen a un nuevo elemento al grupo de correo de gerencia", "categoria": 3, "prioridad": 0},
-  {"texto": "mi cuenta de usuario dice que esta bloqueada por intentos fallidos", "categoria": 3, "prioridad": 1},
-  {"texto": "necesito permisos especiales para instalar una herramienta de desarrollo autorizada", "categoria": 3, "prioridad": 0},
-  {"texto": "me cambiaron de puesto y necesito acceso a la carpeta compartida de recursos humanos", "categoria": 3, "prioridad": 1},
-  {"texto": "la clave del wifi de invitados cambio y no puedo conectar los dispositivos moviles", "categoria": 3, "prioridad": 1},
-  {"texto": "necesito dar de baja definitiva las credenciales de un empleado que causo baja hoy", "categoria": 3, "prioridad": 2},
-  {"texto": "el acceso directo a la VPN corporativa me rechaza las credenciales de dominio", "categoria": 3, "prioridad": 1},
-  {"texto": "alguien mas esta usando mi cuenta institucional porque me llegan alertas de inicio de sesion", "categoria": 3, "prioridad": 2},
-  {"texto": "solicito la creacion de una cuenta de correo corporativo para el nuevo pasante", "categoria": 3, "prioridad": 0},
-  {"texto": "el cable de red esta flojo y se desconecta cada vez que muevo el escritorio", "categoria": 0, "prioridad": 1},
-  {"texto": "la señal del wifi llega muy debil hasta la ultima oficina del pasillo", "categoria": 0, "prioridad": 0},
-  {"texto": "no tengo acceso a internet desde que reiniciaron los switches del piso", "categoria": 0, "prioridad": 2},
-  {"texto": "el puerto ethernet de la pared no tiene link y el led esta apagado", "categoria": 0, "prioridad": 1},
-  {"texto": "la direccion IP esta duplicada y me manda un conflicto en la red local", "categoria": 0, "prioridad": 2},
-  {"texto": "no puedo cargar las paginas web internas del sistema de la empresa", "categoria": 0, "prioridad": 1},
-  {"texto": "el punto de acceso inalambrico de la sala de juntas no deja conectar telefonos", "categoria": 0, "prioridad": 0},
-  {"texto": "la conexion de fibra optica principal se cayo y estamos incomunicados", "categoria": 0, "prioridad": 2},
-  {"texto": "el DNS corporativo no resuelve las direcciones de las paginas", "categoria": 0, "prioridad": 2},
-  {"texto": "necesito que configuren una ip estatica en mi equipo para una impresora de red", "categoria": 0, "prioridad": 0},
-
-  {"texto": "la bandeja de alimentacion de la impresora tritura las hojas al escanear", "categoria": 1, "prioridad": 1},
-  {"texto": "el boton de mayusculas se quedo trabado en mi teclado mecanico", "categoria": 1, "prioridad": 0},
-  {"texto": "la pantalla tactil del equipo de recepcion no responde a los Agios", "categoria": 1, "prioridad": 1},
-  {"texto": "el disco duro externo usb de respaldo hace un clic extraño y no lo lee la pc", "categoria": 1, "prioridad": 2},
-  {"texto": "la bateria del escaner inalambrico de almacen no carga nada", "categoria": 1, "prioridad": 1},
-  {"texto": "el conector de corriente de mi laptop esta flojo y tengo que mover el cable para que cargue", "categoria": 1, "prioridad": 2},
-  {"texto": "la tarjeta grafica integrada se satura y la pantalla se pone blanca por completo", "categoria": 1, "prioridad": 2},
-  {"texto": "el sensor optico del mouse laser parpadea en rojo y el cursor no se mueve", "categoria": 1, "prioridad": 0},
-  {"texto": "las bisagras de la pantalla de mi laptop estan rotas de un lado", "categoria": 1, "prioridad": 1},
-  {"texto": "el telefono de escritorio no enciende la pantalla ni con el adaptador de corriente", "categoria": 1, "prioridad": 1},
-
-  {"texto": "el explorador de windows se congela al intentar vaciar la papelera de reciclaje", "categoria": 2, "prioridad": 0},
-  {"texto": "el software de diseño arroja memoria insuficiente al exportar en alta resolucion", "categoria": 2, "prioridad": 1},
-  {"texto": "la aplicacion de llamadas se cierra de golpe cada vez que entra una videollamada", "categoria": 2, "prioridad": 1},
-  {"texto": "me sale un error de dependencias de visual c++ al intentar abrir un programa interno", "categoria": 2, "prioridad": 1},
-  {"texto": "el sistema operativo no arranca y se queda pasmado en el logotipo de inicio", "categoria": 2, "prioridad": 2},
-  {"texto": "el lector de archivos PDF no permite rellenar los formularios institucionales", "categoria": 2, "prioridad": 0},
-  {"texto": "la actualizacion de seguridad de windows dejo inservible la barra de tareas", "categoria": 2, "prioridad": 2},
-  {"texto": "el programa de facturacion marca error de conexion con el certificado digital", "categoria": 2, "prioridad": 2},
-  {"texto": "las formulas del excel se desconfiguraron y muestran error de valor en toda la hoja", "categoria": 2, "prioridad": 1},
-  {"texto": "el antivirus corporativo elimino por error un archivo ejecutable necesario para trabajar", "categoria": 2, "prioridad": 2},
-
-  {"texto": "olvide la palabra clave para entrar a la sesion del equipo de computo", "categoria": 3, "prioridad": 1},
-  {"texto": "necesito que expidan una nueva firma digital para el sistema de compras", "categoria": 3, "prioridad": 1},
-  {"texto": "mi cuenta de correo fue deshabilitada por inactividad durante mis vacaciones", "categoria": 3, "prioridad": 1},
-  {"texto": "solicito acceso de lectura al servidor central de respaldos historicos", "categoria": 3, "prioridad": 0},
-  {"texto": "el sistema marca que mis credenciales caducan hoy y no se como cambiarlas", "categoria": 3, "prioridad": 1},
-  {"texto": "necesito que den de alta el correo electronico para un proveedor externo temporal", "categoria": 3, "prioridad": 0},
-  {"texto": "la autenticacion de dos pasos no me manda el codigo de acceso al celular", "categoria": 3, "prioridad": 2},
-  {"texto": "no tengo privilegios para instalar la nueva version del navegador web", "categoria": 3, "prioridad": 0},
-  {"texto": "solicito la revocacion inmediata de accesos de un ex colaborador de la empresa", "categoria": 3, "prioridad": 2},
-  {"texto": "el sistema de control de accesos rechaza mi huella digital para entrar al area de servidores", "categoria": 3, "prioridad": 2},
-
-  {"texto": "hola que tal buenas tardes", "categoria": 4, "prioridad": 3},
-  {"texto": "necesito asistencia rapida por favor", "categoria": 4, "prioridad": 3},
-  {"texto": "ghjkldsa asdfgh", "categoria": 4, "prioridad": 3},
-  {"texto": "tengo una duda rapida sobre un equipo", "categoria": 4, "prioridad": 3},
-  {"texto": "buen dia a todos en soporte", "categoria": 4, "prioridad": 3},
-  {"texto": "auxilio nadie me atiende en mi lugar", "categoria": 4, "prioridad": 3},
-  {"texto": "pueden venir a revisar algo conmigo por favor", "categoria": 4, "prioridad": 3},
-  {"texto": "estoy inconforme con la lentitud de los equipos", "categoria": 4, "prioridad": 3},
-  {"texto": "prueba de sistema 9876", "categoria": 4, "prioridad": 3},
-  {"texto": "no entiendo como usar esta plataforma de tickets", "categoria": 4, "prioridad": 3},
-  {"texto": "el cable de red de mi area se rompio por accidente con una silla de oficina", "categoria": 0, "prioridad": 1},
-  {"texto": "no hay conexion wifi en la sala de juntas del piso cuatro", "categoria": 0, "prioridad": 1},
-  {"texto": "el switch de red del departamento se apago y todos perdimos conexion", "categoria": 0, "prioridad": 2},
-  {"texto": "la tarjeta de red inalambrica de mi laptop no detecta ninguna red cercana", "categoria": 0, "prioridad": 1},
-  {"texto": "el cable de fibra esta desconectado del puerto principal", "categoria": 0, "prioridad": 2},
-  {"texto": "la red local esta intermitente y se cae cada cinco minutos", "categoria": 0, "prioridad": 1},
-  {"texto": "no tengo acceso al segmento de red de impresoras departamentales", "categoria": 0, "prioridad": 1},
-  {"texto": "el enrutador principal dejo de mandar paquetes de datos", "categoria": 0, "prioridad": 2},
-  {"texto": "la direccion IP esta en conflicto con otro equipo del area de ventas", "categoria": 0, "prioridad": 1},
-  {"texto": "el cable de red utp no hace el 'click' al conectarlo y se sale solo", "categoria": 0, "prioridad": 0},
-
-  {"texto": "la impresora laser de administracion se quedo trabada con hojas dobles", "categoria": 1, "prioridad": 1},
-  {"texto": "el teclado de mi estacion de oficina tiene la barra espaciadora rota", "categoria": 1, "prioridad": 0},
-  {"texto": "el monitor principal muestra una linea vertical de colores en el centro", "categoria": 1, "prioridad": 1},
-  {"texto": "la bateria de mi laptop marca 0 por ciento y ya no carga nada", "categoria": 1, "prioridad": 2},
-  {"texto": "el escaner plano de documentos digitales no enciende el foco led", "categoria": 1, "prioridad": 1},
-  {"texto": "los puertos usb posteriores de mi gabinete no detectan memorias", "categoria": 1, "prioridad": 1},
-  {"texto": "la impresora multifuncional marca cartucho incompatible aunque es original", "categoria": 1, "prioridad": 1},
-  {"texto": "el boton power de la pc esta hundido y no se puede presionar", "categoria": 1, "prioridad": 1},
-  {"texto": "la camara web externa parpadea y se desconecta sola en videollamadas", "categoria": 1, "prioridad": 0},
-  {"texto": "el regulador de corriente hizo corto circuito y dejo sin luz al equipo", "categoria": 1, "prioridad": 2},
-
-  {"texto": "el programa de contabilidad se cierra de golpe al generar la balanza", "categoria": 2, "prioridad": 2},
-  {"texto": "el archivo de excel de presupuestos dice que esta dañado y no deja abrirlo", "categoria": 2, "prioridad": 2},
-  {"texto": "me sale una ventana de error de memoria virtual insuficiente al abrir sistemas", "categoria": 2, "prioridad": 1},
-  {"texto": "el navegador web se bloquea por completo al cargar la plataforma interna", "categoria": 2, "prioridad": 1},
-  {"texto": "el sistema operativo pide una clave de activacion de producto urgente", "categoria": 2, "prioridad": 0},
-  {"texto": "el lector de archivos PDF no quiere imprimir los formatos institucionales", "categoria": 2, "prioridad": 0},
-  {"texto": "la herramienta de diseño muestra pantalla gris y deja de responder", "categoria": 2, "prioridad": 1},
-  {"texto": "el sistema de inventarios arroja error de conexion con el servidor sql", "categoria": 2, "prioridad": 2},
-  {"texto": "el antivirus corporativo detecto un falso positivo y borro un controlador", "categoria": 2, "prioridad": 2},
-  {"texto": "el bloc de notas no permite guardar reportes largos por falta de espacio", "categoria": 2, "prioridad": 0},
-
-  {"texto": "necesito que reinicien mi sesion de usuario porque se quedo colgada", "categoria": 3, "prioridad": 1},
-  {"texto": "olvide la clave para acceder al sistema de recursos humanos", "categoria": 3, "prioridad": 1},
-  {"texto": "mi cuenta de correo electronico corporativo fue bloqueada por seguridad", "categoria": 3, "prioridad": 1},
-  {"texto": "solicito acceso temporal a la carpeta compartida de proyectos especiales", "categoria": 3, "prioridad": 0},
-  {"texto": "el sistema de dominios indica que mi contraseña expiro hoy mismo", "categoria": 3, "prioridad": 1},
-  {"texto": "necesito autorizacion para crear un correo institucional para un colaborador externo", "categoria": 3, "prioridad": 0},
-  {"texto": "la verificacion en dos pasos de mi cuenta no me deja entrar al portal", "categoria": 3, "prioridad": 2},
-  {"texto": "no tengo permisos para instalar las actualizaciones del software interno", "categoria": 3, "prioridad": 0},
-  {"texto": "solicito la baja de accesos de red para el personal que termino contrato", "categoria": 3, "prioridad": 2},
-  {"texto": "el lector biometrico no reconoce mi registro para entrar al edificio", "categoria": 3, "prioridad": 1},
-
-  {"texto": "hola buenas tardes me pueden apoyar con algo", "categoria": 4, "prioridad": 3},
-  {"texto": "necesito informacion sobre el servicio tecnico general", "categoria": 4, "prioridad": 3},
-  {"texto": "asdfghjk lpoiuytr", "categoria": 4, "prioridad": 3},
-  {"texto": "tengo una consulta rapida sobre mi equipo de trabajo", "categoria": 4, "prioridad": 3},
-  {"texto": "buen dia equipo de soporte", "categoria": 4, "prioridad": 3},
-  {"texto": "auxilio necesito que alguien venga a mi oficina urgente", "categoria": 4, "prioridad": 3},
-  {"texto": "pueden revisar mi equipo por favor", "categoria": 4, "prioridad": 3},
-  {"texto": "estoy inconforme con la atencion del area de sistemas", "categoria": 4, "prioridad": 3},
-  {"texto": "prueba de envio de ticket numero cuatrocientos", "categoria": 4, "prioridad": 3},
-  {"texto": "no se como reportar un fallo en esta plataforma", "categoria": 4, "prioridad": 3}
+  {
+    "texto": "no hay internet en toda la oficina, el wifi se cayo",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "el router principal esta parpadeando en rojo y no hay red",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "el cable de red ethernet no funciona en mi lugar",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesitamos mas hojas y toner para la impresora del segundo piso",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "el monitor de mi computadora no enciende, la pantalla esta negra",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "mi teclado y raton dejaron de funcionar, no los reconoce",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "el programa de excel se congela cada vez que abro un archivo pesado",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "me salio una pantalla azul de error en windows y se reinicio",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "el sistema de ventas marca error de base de datos",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "mi cuenta esta bloqueada porque intente poner mi contrasena mal",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito acceso a la carpeta compartida de recursos humanos",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "olvide mi password del correo corporativo, ayuda",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "hola",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "buenos dias necesito ayuda",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "asdfghjkl",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "tengo una duda",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "hey que tal",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "se cayo el internet en toda la oficina nadie puede trabajar",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "no me puedo conectar al wifi de la oficina",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el cable de red del cubiculo 5 esta flojo y se desconecta",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "el ruter principal se reinicio y no tenemos conexion en ningun lado",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "la señal de wifi en mi oficina esta muy debil casi no agarra",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "no puedo entrar a ninguna pagina web me sale error de conexion en el navegador",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "quisiera un cable de red para mi nuevo escritorio por favor",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "URGENTE toda la empresa sin internet desde hace media hora esto es un caos total",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "el internet esta super lento no puedo ni descargar un pdf chico",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "como me cambio a la red de visitantes de la empresa",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi monitor no enciende ya revise el cable de corriente y nada",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito toner para la impresora hp del tercer piso se acabo",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "varias teclas de mi teclado no funcionan la n y la m no responden",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "mi laptop ya no carga la bateria cambie el cargador pero sigue igual",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "la impresora de contabilidad dejo de funcionar y tenemos que imprimir reportes para la direccion hoy mismo",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "el mouse de mi computadora se mueve solo sin que yo lo toque es raro",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "se me callo la portatil y la pantalla quedo quebrada con rayas",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "mi monitor parpadea cada 5 segundos y ya me duele mucho la vista",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el servidor de impresion no responde ningun equipo de la oficina puede imprimir",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "algunas teclas de mi teclado escriben numeros en vez de letras esta raro",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "excel me marca error de archivo dañado y no puedo abrir mi reporte del mes",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "varias computadoras tienen pantalla azul necesitan soporte urgente",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "windows se actualizo anoche y ahora no me abre el programa de nominas",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito la version mas nueva de office por favor",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "google chrome se cierra solo cada rato sin razon aparente",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el sistema ERP no deja entrar a nadie sale error 500 en todos los equipos",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "word se cierra de repente cuando le doy guardar y pierdo todo mi trabajo",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "como le hago para instalar adobe acrobat en mi maquina",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi pc esta super lenta tarda como 5 minutos en prender y abrir los programas",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "se cayo el servidor de aplicaciones no podemos trabajar nadie en la empresa",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "olvide mi contraseña del correo corporativo y no puedo entrar a mis mensajes",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "el sistema de login no funciona nadie puede acceder a sus cuentas desde las 9 am",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "mi usuario aparece como bloqueado no puedo entrar a nada me pueden ayudar",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito acceso a la carpeta compartida del area de recursos humanos",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "no puedo entrar al portal de empleados con mi usuario y contraseña",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "active directory no responde y nadie puede iniciar sesion en sus equipos",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "quisiera cambiar la contraseña de mi equipo porque ya tiene mucho tiempo la misma",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "me piden permisos para entrar a una carpeta del servidor de ventas",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi cuenta se bloqueo despues de las vacaciones me pueden apoyar",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "el vpn no me deja conectar con mi usuario me sale error de autenticacion",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "hola buenos dias",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "auxilio no se que hacer con mi computadora",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "tengo una duda con la compu",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "buenas tardes me pueden ayudar por favor",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "esto no sirve de nada todo esta mal nadie nos apoya",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "necesito hablar urgente con alguien del area de sistemas",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "como estan todos buen dia",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "tengo un problema pero no se como explicarlo bien",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "ayuda x favor es urgente",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "queja todo mal nadie nos hace caso en sistemas estamos abandonados",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "la red corporativa esta super lenta, tardo 10 minutos en abrir un correo",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "se cayo la red, nadie en el piso 3 tiene conexion al servidor",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "mi compu no se conecta al wifi de invitados",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el modem no prende y no tenemos interne",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "necesito un cable ethernet mas largo para mi escritorio",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "la VPN marca error de conexion y estoy haciendo home office",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "no puedo hacer ping al servidor de base de datos",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "la impresora hace un ruido raro y mancha las hojas de tinta",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "se derramo cafe en mi laptop y ya no prende nada",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "el ventilador de la compu suena muy fuerte y se apaga sola",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "mi raton inalambrico no sirve, creo que ya no tiene pila",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "la pantalla parpadea de colores y no me deja ver bien",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito un adaptador hdmi para el proyector de la sala de juntas urgente",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "mi diadema para llamadas no se escucha y tengo junta",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el word se me cerro de la nada y no guarde mi documento",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el antivirus esta bloqueando el programa de nominas",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "necesito instalar photoshop pero me pide permisos de administrador",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi compu esta super lenta desde que se actualizo windows ayer",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el outlook no me deja mandar correos, se quedan en bandeja de salida",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el sistema ERP corporativo esta caido para todos los vendedores",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "sale un anuncio de que la licencia de office expiro",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "soy nuevo ingreso y todavia no tengo mi cuenta de sistema creada",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "me dice que no tengo permisos para abrir este archivo en red",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "ocupo que le den de baja la cuenta al empleado que renunció hoy",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "no puedo entrar al portal del empleado, dice usuario incorrecto",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito cambiar mi contraseña del servidor ftp",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "alguien intento entrar a mi cuenta y me llego una alerta de seguridad",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "quien me puede dar acceso al dashboard de finanzas?",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "auxilio mi maquina no sirve",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "oigan pueden venir a mi lugar por favor?",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "estoy muy molesto con el servicio de sistemas",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "12345 probando el sistema",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "no se que le pasa a esto pero ya me harte",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "la impresora del pasillo central se quedo sin papel y marca error",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi teclado numerico dejo de escribir de la nada",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "el monitor secundario parpadea constantemente y se pone en negro",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "la laptop no retiene la bateria y se apaga si desconecto el cargador",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "el escaner de la oficina no se comunica con mi computadora",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el puerto usb de enfrente del gabinete no reconoce ningun dispositivo",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "la impresora multifuncional dice atasco de papel pero ya revise y no hay nada",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el boton de encendido de mi CPU esta flojo y batallo para prenderla",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "la camara web integrada de la laptop muestra la imagen totalmente blanca",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "se quemo el multicontacto donde tengo conectada toda la estaciones de trabajo",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "el telefono IP de mi escritorio no tiene tono de llamada",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "la base enfriadora de mi laptop tiro humo y huele a quemado",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "el proyector de la sala principal tiene los colores invertidos y se ve borroso",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "no sirve el click derecho de mi mouse optico",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "la bandeja de la impresora se rompio al intentar meter hojas",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi computadora hace un zumbido muy fuerte en la fuente de poder",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "la lectora de tarjetas inteligentes del checador no lee mi gafete",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el cargador de mi laptop esta echando chispas al conectarlo a la pared",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "la bocina interna del monitor no se escucha nada",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "el cable vga del proyector tiene un pin doblado",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "el excel se traba cada vez que intento aplicar un filtro grande",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el sistema de nominas se queda congelado en la pantalla de inicio de sesion",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "me sale un mensaje de que mi licencia de windows esta a punto de expirar",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "el correo de outlook no se sincroniza y marca error de conexion con el servidor exchange",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "se actualizo el software de contabilidad y ahora arroja un error fatal al abrir",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "el explorador de archivos se cierra solo cada vez que abro una carpeta compartida",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "no puedo abrir archivos PDF con el acrobat reader, dice que el programa dejo de funcionar",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el sistema interno de tickets marca error 500 al intentar enviar un reporte",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "la aplicacion de zoom se cierra sola en plena videoconferencia con clientes",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito desinstalar un programa viejo pero me pide una clave de administrador que no tengo",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "el explorador chrome consume toda la memoria ram y se traba la pc",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "aparecio una ventana emergente extraña con alertas de virus en la pantalla",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "el paquete office dice producto sin licencia en todas las aplicaciones",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "al intentar exportar un reporte a excel el sistema manda un error de sintaxis",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el software de diseño grafico se congela al guardar archivos pesados",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "windows pide reiniciar de forma obligatoria para instalar actualizaciones pendientes",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "el reproductor multimedia corporativo no reproduce los videos de capacitacion",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "la herramienta de respaldos marca error al intentar respaldar la base de datos local",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "el programa de facturacion electronica no valida los timbres fiscales",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "el bloc de notas no me deja guardar cambios por falta de permisos en la ruta",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "olvide por completo mi contraseña de acceso al equipo de trabajo",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito que agreguen a un nuevo elemento al grupo de correo de gerencia",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi cuenta de usuario dice que esta bloqueada por intentos fallidos",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito permisos especiales para instalar una herramienta de desarrollo autorizada",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "me cambiaron de puesto y necesito acceso a la carpeta compartida de recursos humanos",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "la clave del wifi de invitados cambio y no puedo conectar los dispositivos moviles",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito dar de baja definitiva las credenciales de un empleado que causo baja hoy",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "el acceso directo a la VPN corporativa me rechaza las credenciales de dominio",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "alguien mas esta usando mi cuenta institucional porque me llegan alertas de inicio de sesion",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "solicito la creacion de una cuenta de correo corporativo para el nuevo pasante",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "el cable de red esta flojo y se desconecta cada vez que muevo el escritorio",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "la señal del wifi llega muy debil hasta la ultima oficina del pasillo",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "no tengo acceso a internet desde que reiniciaron los switches del piso",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "el puerto ethernet de la pared no tiene link y el led esta apagado",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "la direccion IP esta duplicada y me manda un conflicto en la red local",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "no puedo cargar las paginas web internas del sistema de la empresa",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el punto de acceso inalambrico de la sala de juntas no deja conectar telefonos",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "la conexion de fibra optica principal se cayo y estamos incomunicados",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "el DNS corporativo no resuelve las direcciones de las paginas",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "necesito que configuren una ip estatica en mi equipo para una impresora de red",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "la bandeja de alimentacion de la impresora tritura las hojas al escanear",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el boton de mayusculas se quedo trabado en mi teclado mecanico",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "la pantalla tactil del equipo de recepcion no responde a los Agios",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el disco duro externo usb de respaldo hace un clic extraño y no lo lee la pc",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "la bateria del escaner inalambrico de almacen no carga nada",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el conector de corriente de mi laptop esta flojo y tengo que mover el cable para que cargue",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "la tarjeta grafica integrada se satura y la pantalla se pone blanca por completo",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "el sensor optico del mouse laser parpadea en rojo y el cursor no se mueve",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "las bisagras de la pantalla de mi laptop estan rotas de un lado",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el telefono de escritorio no enciende la pantalla ni con el adaptador de corriente",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el explorador de windows se congela al intentar vaciar la papelera de reciclaje",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "el software de diseño arroja memoria insuficiente al exportar en alta resolucion",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "la aplicacion de llamadas se cierra de golpe cada vez que entra una videollamada",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "me sale un error de dependencias de visual c++ al intentar abrir un programa interno",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el sistema operativo no arranca y se queda pasmado en el logotipo de inicio",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "el lector de archivos PDF no permite rellenar los formularios institucionales",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "la actualizacion de seguridad de windows dejo inservible la barra de tareas",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "el programa de facturacion marca error de conexion con el certificado digital",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "las formulas del excel se desconfiguraron y muestran error de valor en toda la hoja",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el antivirus corporativo elimino por error un archivo ejecutable necesario para trabajar",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "olvide la palabra clave para entrar a la sesion del equipo de computo",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito que expidan una nueva firma digital para el sistema de compras",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "mi cuenta de correo fue deshabilitada por inactividad durante mis vacaciones",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "solicito acceso de lectura al servidor central de respaldos historicos",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "el sistema marca que mis credenciales caducan hoy y no se como cambiarlas",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito que den de alta el correo electronico para un proveedor externo temporal",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "la autenticacion de dos pasos no me manda el codigo de acceso al celular",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "no tengo privilegios para instalar la nueva version del navegador web",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "solicito la revocacion inmediata de accesos de un ex colaborador de la empresa",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "el sistema de control de accesos rechaza mi huella digital para entrar al area de servidores",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "hola que tal buenas tardes",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "necesito asistencia rapida por favor",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "ghjkldsa asdfgh",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "tengo una duda rapida sobre un equipo",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "buen dia a todos en soporte",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "auxilio nadie me atiende en mi lugar",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "pueden venir a revisar algo conmigo por favor",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "estoy inconforme con la lentitud de los equipos",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "prueba de sistema 9876",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "no entiendo como usar esta plataforma de tickets",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "el cable de red de mi area se rompio por accidente con una silla de oficina",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "no hay conexion wifi en la sala de juntas del piso cuatro",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el switch de red del departamento se apago y todos perdimos conexion",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "la tarjeta de red inalambrica de mi laptop no detecta ninguna red cercana",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el cable de fibra esta desconectado del puerto principal",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "la red local esta intermitente y se cae cada cinco minutos",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "no tengo acceso al segmento de red de impresoras departamentales",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el enrutador principal dejo de mandar paquetes de datos",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "la direccion IP esta en conflicto con otro equipo del area de ventas",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el cable de red utp no hace el 'click' al conectarlo y se sale solo",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "la impresora laser de administracion se quedo trabada con hojas dobles",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el teclado de mi estacion de oficina tiene la barra espaciadora rota",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "el monitor principal muestra una linea vertical de colores en el centro",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "la bateria de mi laptop marca 0 por ciento y ya no carga nada",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "el escaner plano de documentos digitales no enciende el foco led",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "los puertos usb posteriores de mi gabinete no detectan memorias",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "la impresora multifuncional marca cartucho incompatible aunque es original",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el boton power de la pc esta hundido y no se puede presionar",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "la camara web externa parpadea y se desconecta sola en videollamadas",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "el regulador de corriente hizo corto circuito y dejo sin luz al equipo",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "el programa de contabilidad se cierra de golpe al generar la balanza",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "el archivo de excel de presupuestos dice que esta dañado y no deja abrirlo",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "me sale una ventana de error de memoria virtual insuficiente al abrir sistemas",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el navegador web se bloquea por completo al cargar la plataforma interna",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el sistema operativo pide una clave de activacion de producto urgente",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "el lector de archivos PDF no quiere imprimir los formatos institucionales",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "la herramienta de diseño muestra pantalla gris y deja de responder",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el sistema de inventarios arroja error de conexion con el servidor sql",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "el antivirus corporativo detecto un falso positivo y borro un controlador",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "el bloc de notas no permite guardar reportes largos por falta de espacio",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "necesito que reinicien mi sesion de usuario porque se quedo colgada",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "olvide la clave para acceder al sistema de recursos humanos",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "mi cuenta de correo electronico corporativo fue bloqueada por seguridad",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "solicito acceso temporal a la carpeta compartida de proyectos especiales",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "el sistema de dominios indica que mi contraseña expiro hoy mismo",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito autorizacion para crear un correo institucional para un colaborador externo",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "la verificacion en dos pasos de mi cuenta no me deja entrar al portal",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "no tengo permisos para instalar las actualizaciones del software interno",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "solicito la baja de accesos de red para el personal que termino contrato",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "el lector biometrico no reconoce mi registro para entrar al edificio",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "hola buenas tardes me pueden apoyar con algo",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "necesito informacion sobre el servicio tecnico general",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "asdfghjk lpoiuytr",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "tengo una consulta rapida sobre mi equipo de trabajo",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "buen dia equipo de soporte",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "auxilio necesito que alguien venga a mi oficina urgente",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "pueden revisar mi equipo por favor",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "estoy inconforme con la atencion del area de sistemas",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "prueba de envio de ticket numero cuatrocientos",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "no se como reportar un fallo en esta plataforma",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "no puedo conectarme al servidor de archivos desde mi laptop",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "la red del piso dos esta caida desde hace 20 minutos",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "mi laptop dice red sin acceso a internet aunque el wifi esta conectado",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito conectar mi equipo nuevo a la red por primera vez",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "el internet se corta cada 10 minutos justo cuando estoy en videollamada",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "no cargan las paginas pero el whatsapp web si funciona raro",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "la vpn se desconecta sola cada rato y pierdo mi trabajo",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "quisiera saber la contraseña actual del wifi de la sala de juntas",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "todo el edificio se quedo sin internet de un momento a otro",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "mi celular de la empresa no agarra la red wifi corporativa",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el punto de acceso wifi de mi area parpadea en naranja",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "no puedo acceder a la unidad de red compartida donde guardamos los archivos",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "la conexion a internet se ve bien pero las paginas cargan muy lento",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "se cayo la conexion de todo el area de ventas hace unos minutos",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "necesito que revisen porque mi ip no se asigna automaticamente",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el internet del home office no conecta desde esta manana",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "solicito ampliar la señal de wifi porque no llega bien a mi escritorio",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "la red inalambrica aparece pero al conectar dice contraseña incorrecta",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "no hay señal de red en ningun celular de la oficina desde temprano",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "mi conexion ethernet muestra icono de exclamacion amarilla",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el internet de la sucursal norte se cayo por completo",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "el telefono de escritorio ip no tiene tono ni conexion a la central",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "la señal wifi llega muy debil al ultimo cubiculo del pasillo",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el switch del rack principal tiene una luz roja intermitente",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "no logro acceder al servidor ftp para subir archivos del proyecto",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "la conexion de red se cae cada vez que empieza a llover",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito una extension de cable de red para mi nuevo puesto",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "el enlace entre las dos sucursales esta caido desde temprano",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "mi laptop no logra hacer ping al servidor central de la empresa",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "la red wifi del comedor no deja conectar a nadie desde ayer",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "se perdio la conexion de internet en todo el area de produccion",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "quisiera activar el acceso wifi para los visitantes de hoy",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "el modem de la sucursal parpadea en rojo sin parar",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "no me deja acceder a la intranet desde mi casa por vpn",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "la velocidad de descarga bajo muchisimo desde esta manana",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "el cable de red se sale del conector cada vez que me muevo",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "toda la planta baja se quedo sin conexion de red de golpe",
+    "categoria": 0,
+    "prioridad": 2
+  },
+  {
+    "texto": "necesito que configuren mi acceso a la red inalambrica nueva",
+    "categoria": 0,
+    "prioridad": 0
+  },
+  {
+    "texto": "el router de mi area se reinicia solo cada cierto tiempo",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "no puedo entrar al sistema porque marca tiempo de espera agotado de red",
+    "categoria": 0,
+    "prioridad": 1
+  },
+  {
+    "texto": "la pantalla de mi laptop se ve con lineas horizontales de colores",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el disco duro externo no es reconocido por ninguna computadora",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "la impresora se atasca con el papel a la mitad de cada impresion",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito una diadema nueva porque la mia ya no tiene sonido",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "el cargador de mi laptop hace chispas al conectarlo",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "la webcam integrada de mi laptop ya no prende el led",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "el teclado numerico de mi equipo dejo de responder por completo",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "la base de la laptop esta hirviendo y se apaga sola",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "el mouse ergonomico nuevo no se sincroniza con mi computadora",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "la pantalla externa no recibe señal aunque el cable esta bien puesto",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el disco duro de mi pc hace un ruido raro como clicks",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "la impresora de etiquetas no alinea bien el texto en la hoja",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi laptop no reconoce el cargador aunque es el original",
+    "categoria": 1,
+    "prioridad": 2
+  },
+  {
+    "texto": "la camara de la sala de juntas no enciende para las videollamadas",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el touchpad de mi laptop dejo de responder de un momento a otro",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito revisar el ventilador porque suena como motor de avion",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "la impresora 3d del area de diseño no calienta la boquilla",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "el puerto hdmi de mi monitor ya no transmite imagen",
+    "categoria": 1,
+    "prioridad": 1
+  },
+  {
+    "texto": "el lector de tarjetas de mi equipo no reconoce ninguna tarjeta",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "la bateria de mi mouse inalambrico dura menos de un dia",
+    "categoria": 1,
+    "prioridad": 0
+  },
+  {
+    "texto": "el sistema de facturacion marca error al generar el pdf",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "no puedo actualizar windows porque se queda pegado en 40 por ciento",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el correo outlook no sincroniza los mensajes nuevos desde ayer",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "la aplicacion de inventario se cierra sola al escanear un codigo",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "necesito reinstalar el driver de la impresora en mi equipo",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "power point no me deja insertar imagenes desde esta manana",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "el software de facturacion electronica marca error de certificado",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "mi navegador me redirige a paginas raras que no reconozco",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito licencia para usar zoom en llamadas mas largas de 40 minutos",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "el sistema contable se congela al generar el reporte mensual",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "windows me pide reiniciar cada 10 minutos por una actualizacion",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "no puedo abrir archivos pdf desde el correo, se quedan cargando",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "la aplicacion de asistencia no registra mi entrada correctamente",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito que instalen un lector de codigos de barras en mi equipo",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "el antivirus bloqueo por error el sistema de nomina esta manana",
+    "categoria": 2,
+    "prioridad": 2
+  },
+  {
+    "texto": "mi calendario de outlook no muestra las juntas de hoy",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "la aplicacion de mensajeria interna no me deja iniciar sesion",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito ayuda para configurar las firmas automaticas en mi correo",
+    "categoria": 2,
+    "prioridad": 0
+  },
+  {
+    "texto": "el sistema de tickets se queda cargando y nunca abre",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "se me borro un archivo importante de word sin querer",
+    "categoria": 2,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito que me restablezcan la contraseña de mi usuario de dominio",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "mi acceso al sistema de nomina fue revocado por error",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "quiero dar de alta un nuevo usuario para el empleado que ingreso hoy",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "no puedo entrar a la vpn con mi usuario desde la actualizacion",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito permisos de escritura en la carpeta compartida de ventas",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi token de doble factor no genera el codigo correcto",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "olvide la contraseña del sistema de asistencia y no puedo marcar entrada",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito que bloqueen el acceso de un empleado que ya no labora aqui",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "mi cuenta de correo aparece suspendida sin explicacion",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "quisiera cambiar mi nombre de usuario porque tiene un error de dedo",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "el sistema me pide cambiar contraseña pero no acepta ninguna nueva",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito acceso al modulo de reportes que antes no tenia",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi huella digital ya no es reconocida por el lector de la entrada",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "quiero saber por que mi cuenta se bloqueo despues de tres intentos",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito restablecer el acceso remoto a mi computadora de la oficina",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "el sistema de permisos no refleja mi nuevo puesto en el organigrama",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "no me llega el correo de verificacion para activar mi cuenta nueva",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito revocar el acceso de un proveedor externo al sistema",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "mi sesion se cierra sola cada 5 minutos sin razon aparente",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "quiero saber como habilitar la firma electronica en mi usuario",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "necesito que me den de alta en el sistema de compras",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi contraseña expiro y el enlace para cambiarla no funciona",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "no logro ver los archivos compartidos que antes si podia ver",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "necesito acceso de administrador temporal para instalar un programa",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "mi cuenta de usuario aparece duplicada en el sistema",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "quiero dar de baja el acceso de un dispositivo perdido a mi cuenta",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "no puedo cambiar mi foto de perfil en el directorio de empleados",
+    "categoria": 3,
+    "prioridad": 0
+  },
+  {
+    "texto": "necesito recuperar el acceso a mi cuenta despues del cambio de area",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "el sistema no reconoce mi credencial de acceso al edificio nuevo",
+    "categoria": 3,
+    "prioridad": 1
+  },
+  {
+    "texto": "quiero verificar por que me llegan alertas de inicio de sesion sospechoso",
+    "categoria": 3,
+    "prioridad": 2
+  },
+  {
+    "texto": "buenas ando checando si esto funciona",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "hola otra vez, tengo otra pregunta",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "disculpen la molestia, alguien me puede orientar",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "prueba 123",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "necesito hablar con una persona no con un bot",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "esto es una prueba del sistema, ignorar",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "que tal buen dia a todos",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "tengo un problema pero prefiero explicarlo por telefono",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "nadie contesta el area de soporte hace dias",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "hola de nuevo, ya resolvieron mi caso anterior",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "esto sigue sin funcionar bien la plataforma en general",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "una pregunta rapida nada mas",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "que buena onda que ya contestan mas rapido",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "necesito ayuda pero no se en que categoria entra",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "hey estas ahi",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "gracias de antemano por la ayuda",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "esto es urgente pero no se explicarlo bien todavia",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "una consulta general sobre el equipo de computo",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "buenas tardes disculpen la tardanza en escribir",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "sigo esperando respuesta de mi ticket anterior",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "hola quisiera reportar algo",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "todo bien por aca, solo probando el chat",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "necesito que alguien revise mi caso con mas atencion",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "cual es el horario de atencion de sistemas",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "cuanto tardan normalmente en resolver un ticket",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "cuentame como funciona este chat de soporte",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "eres una persona real o un robot",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "esto no tiene nada que ver con mi computadora",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "solo queria saludar buen dia",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "cuanta gente hay en el equipo de soporte",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "necesito reportar una queja sobre el servicio",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "hola quisiera saber el estado de mi ticket anterior",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "puedo hablar contigo en otro idioma",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "estoy probando si contestas rapido",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "que opciones tengo si esto no se resuelve",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "hola buenas, aqui de nuevo con otra duda",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "quien es el encargado del area de sistemas",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "esto parece un error del sistema de tickets no de mi equipo",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "nada mas queria confirmar que llego mi mensaje",
+    "categoria": 4,
+    "prioridad": 3
+  },
+  {
+    "texto": "me pueden explicar como usar este sistema de soporte",
+    "categoria": 4,
+    "prioridad": 3
+  }
 ]
