@@ -6,7 +6,7 @@ const { entrenarRedes, predecirTicket } = require('./neural.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const OLLAMA_URL = process.env.OLLAMA_URL || 'http://127.0.0.1:11434';
-const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'llama3.2';
+const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'qwen2.5';
 const systemPrompt = require('./prompt');
 
 app.use(express.json());
