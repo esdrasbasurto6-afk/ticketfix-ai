@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketFix AI | Soporte Interactivo</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ================= HEADER ================= -->
+        <header class="hero">
+            <div class="logo">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <div style="flex-grow: 1;">
+                <h1>TicketFix AI</h1>
+                <p>
+                    Asistente de Soporte Técnico Interactivo
+                    <br>
+                    <span>Atención guiada paso a paso mediante Red Neuronal + LLM</span>
+                </p>
+            </div>
+
+            <div>
+                <span id="connection-status" style="font-size: 0.8rem; padding: 6px 12px; border-radius: 20px; background: rgba(0,0,0,0.1); border: 1px solid #cbd5e1; color: #d97706; font-weight: 500;">Comprobando...</span>
+            </div>
+        </header>
+
+        <!-- ================= MAIN LAYOUT ================= -->
+        <main class="layout-grid">
+
+            <!-- PANEL IZQUIERDO: CHAT INTERACTIVO -->
+            <section class="card chat-section">
+                
+                <h2 class="chat-title">
+                    <i class="fa-regular fa-comments"></i> Chat de Soporte
+                </h2>
+
+                <!-- Caja de Mensajes -->
+                <div id="chat-box" class="chat-container">
+                    <!-- Los mensajes se generan aquí desde app.js -->
+                </div>
+
+                <!-- Input de Texto y Botones -->
+                <div class="chat-input-area">
+                    <textarea 
+                        id="ticket-input" 
+                        rows="2" 
+                        placeholder="Escribe aquí tu respuesta o describe el problema..."></textarea>
+                    
+                    <div class="buttons">
+                        <button id="submit-btn" type="button" class="btn-primary">
+                            <i class="fa-solid fa-paper-plane"></i> Enviar
+                        </button>
+
+                        <button id="clear-btn" type="button" class="btn-secondary">
+                            <i class="fa-solid fa-arrows-rotate"></i> Nuevo Chat
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- PANEL DERECHO: DIAGNÓSTICO EN TIEMPO REAL -->
+            <section id="results-panel" class="card results-section hidden">
+                
+                <h2>
+                    <i class="fa-solid fa-clipboard-check"></i> Estado del Ticket
+                </h2>
+
+                <!-- Badges -->
+                <div class="badges-vertical">
+                    <span id="badge-estado" class="badge">📌 Estado: Abierto</span>
+                    <span id="badge-categoria" class="badge">📂 Categoría</span>
+                    <span id="badge-prioridad" class="badge">🚨 Prioridad</span>
+                </div>
+
+                <!-- Detalles Técnicos -->
+                <div class="results-details">
+                    
+                    <div class="detail-item">
+                        <i class="fa-solid fa-building"></i>
+                        <div>
+                            <h3>Departamento Asignado</h3>
+                            <p id="res-departamento">-</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <i class="fa-solid fa-user-gear"></i>
+                        <div>
+                            <h3>Derivación a Técnico</h3>
+                            <p id="res-tecnico">-</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Información Extra -->
+                <div class="card info-card mt-extra">
+                    <h3><i class="fa-solid fa-circle-info"></i> Info Interna</h3>
+                    <p style="font-size: 13px; color: #64748b; margin-top: 10px;">
+                        TicketFix clasifica tu problema utilizando <strong>TensorFlow.js</strong> y te guía en la resolución paso a paso conectándose a <strong>Ollama</strong>.
+                    </p>
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ================= FOOTER ================= -->
+        <footer>
+            <p>
+                <i class="fa-solid fa-shield-halved"></i>
+                TicketFix AI © 2026 | Sistema Inteligente de Gestión de Incidentes
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+</html>
