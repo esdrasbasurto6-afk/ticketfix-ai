@@ -33,12 +33,14 @@
                 <p>
                     Asistente de Soporte Técnico Interactivo
                     <br>
-                    <span>Atención guiada paso a paso mediante Red Neuronal + LLM</span>
+                    <span>Resolución inteligente de incidentes paso a paso</span>
                 </p>
             </div>
 
             <div>
-                <span id="connection-status" style="font-size: 0.8rem; padding: 6px 12px; border-radius: 20px; background: rgba(0,0,0,0.1); border: 1px solid #cbd5e1; color: #d97706; font-weight: 500;">Comprobando...</span>
+                <span id="connection-status" style="font-size: 0.85rem; padding: 8px 16px; border-radius: 30px; background: #fffbeb; border: 1px solid #fde68a; color: #d97706; font-weight: 500;">
+                    <i class="fa-solid fa-circle-notch fa-spin" style="margin-right: 5px;"></i> Comprobando...
+                </span>
             </div>
         </header>
 
@@ -62,7 +64,7 @@
                     <textarea 
                         id="ticket-input" 
                         rows="2" 
-                        placeholder="Escribe aquí tu respuesta o describe el problema..."></textarea>
+                        placeholder="Describe el problema o responde al asistente..."></textarea>
                     
                     <div class="buttons">
                         <button id="submit-btn" type="button" class="btn-primary">
@@ -112,14 +114,6 @@
 
                 </div>
 
-                <!-- Información Extra -->
-                <div class="card info-card mt-extra">
-                    <h3><i class="fa-solid fa-circle-info"></i> Info Interna</h3>
-                    <p style="font-size: 13px; color: #64748b; margin-top: 10px;">
-                        TicketFix clasifica tu problema utilizando <strong>TensorFlow.js</strong> y te guía en la resolución paso a paso conectándose a <strong>Ollama</strong>.
-                    </p>
-                </div>
-
             </section>
 
         </main>
@@ -128,7 +122,7 @@
         <footer>
             <p>
                 <i class="fa-solid fa-shield-halved"></i>
-                TicketFix AI © 2026 | Sistema Inteligente de Gestión de Incidentes
+                TicketFix AI © 2026 | Sistema de Gestión de Incidentes
             </p>
         </footer>
 
