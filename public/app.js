@@ -28,7 +28,13 @@ function setStatus(message, type = "info") {
     }
 }
 
-function agregarMensajeAlChat(rol, texto) {
+// ---------------------------------------------------------
+// Función para crear las burbujas de chat en la pantalla
+// NUEVO: acepta un cuarto parámetro opcional `iconoPaso` (ej. "fa-wifi")
+// que se muestra como badge visual arriba del texto, cuando el mensaje
+// viene de un playbook con un paso ilustrado.
+// ---------------------------------------------------------
+function agregarMensajeAlChat(rol, texto, iconoPaso) {
     const chatBox = document.getElementById('chat-box');
     if (!chatBox) return;
 
@@ -38,8 +44,13 @@ function agregarMensajeAlChat(rol, texto) {
     const icon = rol === 'user' ? '<i class="fa-solid fa-user"></i>' : '<i class="fa-solid fa-robot"></i>';
     const name = rol === 'user' ? 'Tú' : 'TicketFix AI';
 
+    const badgeIcono = iconoPaso
+        ? `<div class="paso-icono-badge"><i class="fa-solid ${iconoPaso}"></i></div>`
+        : '';
+
     msgDiv.innerHTML = `
         <div class="msg-header">${icon} ${name}</div>
+        ${badgeIcono}
         <div class="msg-body">${texto.replace(/\n/g, '<br>')}</div>
     `;
 
@@ -48,10 +59,10 @@ function agregarMensajeAlChat(rol, texto) {
 }
 
 // ---------------------------------------------------------
-// NUEVO: botones de confirmación rápida (Sí/No) tras cada paso de solución
+// Botones de confirmación rápida (Sí/No) tras cada paso de solución
 // ---------------------------------------------------------
 function mostrarBotonesConfirmacion() {
-    quitarBotonesConfirmacion(); // por si había un set de botones anterior sin usar
+    quitarBotonesConfirmacion();
 
     const chatBox = document.getElementById('chat-box');
     if (!chatBox) return;
@@ -87,8 +98,7 @@ function quitarBotonesConfirmacion() {
 }
 
 // ---------------------------------------------------------
-// Función principal — ahora acepta un mensaje manual opcional
-// (para cuando viene de los botones, en vez del textarea)
+// Función principal — acepta un mensaje manual opcional (para los botones)
 // ---------------------------------------------------------
 async function enviarMensaje(mensajeManual) {
     if (!ticketActivo) return;
@@ -136,14 +146,13 @@ async function enviarMensaje(mensajeManual) {
 
         const res = data.result;
 
-        agregarMensajeAlChat('ai', res.respuesta_chat);
+        // NUEVO: pasamos res.icono_paso como cuarto argumento
+        agregarMensajeAlChat('ai', res.respuesta_chat, res.icono_paso);
         historialConversacion.push({ role: 'assistant', content: res.respuesta_chat });
 
         actualizarPanelTicket(res);
         setStatus("🟢 Servidor activo", "success");
 
-        // NUEVO: si el bot acaba de dar un paso de solución y el ticket sigue abierto,
-        // mostramos los botones de confirmación rápida
         if (res.estado_ticket === "Abierto" && res.es_paso_de_solucion === true) {
             mostrarBotonesConfirmacion();
         }
@@ -202,7 +211,7 @@ function limpiarChat() {
     ticketActivo = true;
     sessionId = generarSessionId();
 
-    quitarBotonesConfirmacion(); // NUEVO: limpia botones colgados de la sesión anterior
+    quitarBotonesConfirmacion();
 
     const chatBox = document.getElementById('chat-box');
     if (chatBox) chatBox.innerHTML = '';

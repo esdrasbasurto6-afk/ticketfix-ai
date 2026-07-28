@@ -3,10 +3,11 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const { entrenarRedes, predecirTicket } = require('./neural.js');
 const { clasificarConfirmacion } = require('./utils/confirmacion');
 const { calcularSimilitud } = require('./utils/similitud');
-const fs = require('fs');
+const { buscarPlaybook, detectarTipoDispositivo } = require('./utils/playbooks');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,28 +23,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ---------------------------------------------------------
 // ESTADO POR SESIÓN (en memoria — para producción usar Redis)
 // ---------------------------------------------------------
-// sessionId -> { pasosDeSolucionDados: number, pasosTextos: string[], dispositivoConfirmado: string|null, clasificacionInicial: {categoria, prioridad}|null }
 const estadosPorSesion = new Map();
 
 function obtenerOCrearEstado(sessionId) {
     if (!estadosPorSesion.has(sessionId)) {
         estadosPorSesion.set(sessionId, {
             pasosDeSolucionDados: 0,
-            pasosTextos: [], // guarda el texto de cada paso ya dado, para detectar repeticiones
+            pasosTextos: [],
             dispositivoConfirmado: null,
-            clasificacionInicial: null
+            clasificacionInicial: null,
+            playbookActivo: null,
+            playbookPasoIndex: 0
         });
     }
     return estadosPorSesion.get(sessionId);
 }
 
-// Limpieza simple de sesiones viejas (evita fuga de memoria en correr indefinido)
 setInterval(() => {
     // Si quieres expirar sesiones inactivas, aquí podrías guardar un timestamp por sesión y filtrar.
-    // Por ahora, con volumen bajo de un demo/interno, un Map simple es suficiente.
 }, 1000 * 60 * 60);
 
-// Función simple: agrega una línea al archivo de logs (formato JSONL = un JSON por línea)
 function registrarTicketCerrado(datos) {
     try {
         const carpetaLogs = path.dirname(LOG_TICKETS_PATH);
@@ -55,6 +54,29 @@ function registrarTicketCerrado(datos) {
     } catch (err) {
         console.error('⚠️ No se pudo guardar el log del ticket:', err);
     }
+}
+
+function finalizarRespuesta(res, respuestaJSON, estado, sessionId, historialUser) {
+    if (respuestaJSON.estado_ticket === "Resuelto" || respuestaJSON.estado_ticket === "Escalado") {
+        const primerMensajeUsuario = historialUser.find(m => m.role === 'user')?.content || "";
+        registrarTicketCerrado({
+            timestamp: new Date().toISOString(),
+            sessionId,
+            primerMensaje: primerMensajeUsuario,
+            categoriaAsignada: respuestaJSON.categoria,
+            prioridadAsignada: respuestaJSON.prioridad,
+            estadoFinal: respuestaJSON.estado_ticket,
+            totalMensajesUsuario: historialUser.filter(m => m.role === 'user').length
+        });
+        estadosPorSesion.delete(sessionId);
+    }
+
+    return res.json({
+        ok: true,
+        result: respuestaJSON,
+        meta: { timestamp: new Date().toISOString(), model: OLLAMA_MODEL, sessionId },
+        technical: respuestaJSON
+    });
 }
 
 app.get('/api/health', (req, res) => {
@@ -76,11 +98,6 @@ app.post('/api/agent', async (req, res) => {
             historialUser.push({ role: 'user', content: mensajeSuelto });
         }
 
-        // ---------------------------------------------------------
-        // CLASIFICACIÓN DE CONFIRMACIÓN — se calcula DESPUÉS de normalizar
-        // historialUser, para que también funcione con el formato legacy
-        // { message: "..." } y no solo con { historial: [...] }.
-        // ---------------------------------------------------------
         const ultimoMensajeUsuario = [...historialUser].reverse().find(m => m.role === 'user')?.content || "";
         const tipoConfirmacion = clasificarConfirmacion(ultimoMensajeUsuario);
         console.log(`🔍 Clasificación de confirmación: "${ultimoMensajeUsuario}" → ${tipoConfirmacion}`);
@@ -93,8 +110,7 @@ app.post('/api/agent', async (req, res) => {
         }
 
         // ---------------------------------------------------------
-        // FASE 1: RED NEURONAL — clasificamos SOLO en el primer mensaje de la sesión
-        // y luego la tratamos como fuente de verdad (no dejamos que el LLM la cambie).
+        // FASE 1: RED NEURONAL
         // ---------------------------------------------------------
         if (!estado.clasificacionInicial) {
             const primerMensaje = historialUser.find(m => m.role === 'user')?.content || "";
@@ -104,7 +120,76 @@ app.post('/api/agent', async (req, res) => {
         const clasificacion = estado.clasificacionInicial;
 
         // ---------------------------------------------------------
-        // FASE 2: LLM OLLAMA — usamos el contador de estado real, no mensajes de usuario
+        // DETECCIÓN Y USO DE PLAYBOOKS
+        // ---------------------------------------------------------
+        const tipoDispositivoDetectado = detectarTipoDispositivo(ultimoMensajeUsuario)
+            || detectarTipoDispositivo(estado.dispositivoConfirmado);
+
+        if (!estado.playbookActivo && tipoDispositivoDetectado) {
+            const playbookEncontrado = buscarPlaybook(clasificacion.categoria, tipoDispositivoDetectado);
+            if (playbookEncontrado) {
+                estado.playbookActivo = playbookEncontrado;
+                estado.playbookPasoIndex = 0;
+                estado.dispositivoConfirmado = estado.dispositivoConfirmado || tipoDispositivoDetectado;
+                console.log(`📘 Playbook activado: ${clasificacion.categoria}::${tipoDispositivoDetectado}`);
+            }
+        }
+
+        if (estado.playbookActivo) {
+            const departamentoPlaybook = clasificacion.categoria === 'Redes' ? 'Redes' : 'Soporte Técnico';
+
+            if (tipoConfirmacion === 'RESULTADO_CONFIRMADO') {
+                const respuestaJSON = {
+                    categoria: clasificacion.categoria,
+                    prioridad: clasificacion.prioridad,
+                    departamento: departamentoPlaybook,
+                    respuesta_chat: "¡Excelente! Me alegra que hayamos podido resolverlo. Que tengas un gran día.",
+                    icono_paso: "fa-circle-check",
+                    requiere_tecnico: false,
+                    estado_ticket: "Resuelto",
+                    es_paso_de_solucion: false,
+                    dispositivo_detectado: estado.dispositivoConfirmado
+                };
+                return finalizarRespuesta(res, respuestaJSON, estado, sessionId, historialUser);
+            }
+
+            const pasoActual = estado.playbookActivo[estado.playbookPasoIndex];
+
+            if (!pasoActual) {
+                const respuestaJSON = {
+                    categoria: clasificacion.categoria,
+                    prioridad: clasificacion.prioridad,
+                    departamento: departamentoPlaybook,
+                    respuesta_chat: "Ya intentamos las alternativas más comunes para este problema sin éxito. Voy a derivar tu caso a un técnico humano para que lo revise a fondo.",
+                    icono_paso: "fa-user-gear",
+                    requiere_tecnico: true,
+                    estado_ticket: "Escalado",
+                    es_paso_de_solucion: false,
+                    dispositivo_detectado: estado.dispositivoConfirmado
+                };
+                return finalizarRespuesta(res, respuestaJSON, estado, sessionId, historialUser);
+            }
+
+            const respuestaJSON = {
+                categoria: clasificacion.categoria,
+                prioridad: clasificacion.prioridad,
+                departamento: departamentoPlaybook,
+                respuesta_chat: `${pasoActual.texto} ${pasoActual.pregunta}`,
+                icono_paso: pasoActual.icono || null,
+                requiere_tecnico: false,
+                estado_ticket: "Abierto",
+                es_paso_de_solucion: true,
+                dispositivo_detectado: estado.dispositivoConfirmado
+            };
+
+            estado.playbookPasoIndex += 1;
+            estado.pasosDeSolucionDados += 1;
+
+            return finalizarRespuesta(res, respuestaJSON, estado, sessionId, historialUser);
+        }
+
+        // ---------------------------------------------------------
+        // FASE 2: LLM OLLAMA — solo si NO hay playbook aplicable
         // ---------------------------------------------------------
         const listaPasosPrevios = estado.pasosTextos.length > 0
             ? estado.pasosTextos.map((p, i) => `  ${i + 1}. "${p}"`).join('\n')
@@ -175,7 +260,6 @@ ${pistaConfirmacion}
 
         const yaTeniamos3OMasPasos = estado.pasosDeSolucionDados >= 3;
 
-        // Detectamos si el paso que el LLM acaba de dar es muy parecido a uno anterior
         let esRepeticion = false;
         if (respuestaJSON.estado_ticket === "Abierto" && respuestaJSON.es_paso_de_solucion === true) {
             esRepeticion = estado.pasosTextos.some(
@@ -202,7 +286,6 @@ ${pistaConfirmacion}
             estado.pasosTextos.push(respuestaJSON.respuesta_chat);
         }
 
-        // AUDITOR: si detectamos "SOLO_EJECUCION" pero el LLM de todos modos marcó "Resuelto", lo corregimos
         if (tipoConfirmacion === 'SOLO_EJECUCION' && respuestaJSON.estado_ticket === "Resuelto") {
             console.log("⚠️ Auditor: el LLM marcó 'Resuelto' pero el usuario solo confirmó ejecución, no resultado. Corrigiendo.");
             respuestaJSON.estado_ticket = "Abierto";
@@ -222,7 +305,6 @@ ${pistaConfirmacion}
             respuestaJSON.estado_ticket = "Escalado";
         }
 
-        // FRANCOTIRADOR: si el ticket se cierra, elimina cualquier pregunta rebelde de la IA
         if (respuestaJSON.estado_ticket === "Resuelto" || respuestaJSON.estado_ticket === "Escalado") {
             respuestaJSON.respuesta_chat = respuestaJSON.respuesta_chat.replace(/¿[^?]*\?/g, '').trim();
 
@@ -233,7 +315,6 @@ ${pistaConfirmacion}
             }
         }
 
-        // LIMPIADOR DE CARACTERES
         if (respuestaJSON.respuesta_chat) {
             respuestaJSON.respuesta_chat = respuestaJSON.respuesta_chat
                 .replace(/\\n/g, ' ')
@@ -242,31 +323,7 @@ ${pistaConfirmacion}
                 .replace(/\t/g, ' ');
         }
 
-        // Guardamos el ticket cerrado como futuro dato de entrenamiento
-        if (respuestaJSON.estado_ticket === "Resuelto" || respuestaJSON.estado_ticket === "Escalado") {
-            const primerMensajeUsuario = historialUser.find(m => m.role === 'user')?.content || "";
-            registrarTicketCerrado({
-                timestamp: new Date().toISOString(),
-                sessionId,
-                primerMensaje: primerMensajeUsuario,
-                categoriaAsignada: respuestaJSON.categoria,
-                prioridadAsignada: respuestaJSON.prioridad,
-                estadoFinal: respuestaJSON.estado_ticket,
-                totalMensajesUsuario: historialUser.filter(m => m.role === 'user').length
-            });
-        }
-
-        // Si el ticket se cerró, liberamos el estado de sesión (opcional — o consérvalo para logs/analytics)
-        if (respuestaJSON.estado_ticket === "Resuelto" || respuestaJSON.estado_ticket === "Escalado") {
-            estadosPorSesion.delete(sessionId);
-        }
-
-        return res.json({
-            ok: true,
-            result: respuestaJSON,
-            meta: { timestamp: new Date().toISOString(), model: OLLAMA_MODEL, sessionId },
-            technical: respuestaJSON
-        });
+        return finalizarRespuesta(res, respuestaJSON, estado, sessionId, historialUser);
 
     } catch (error) {
         console.error("❌ Error general en el servidor híbrido:", error);
