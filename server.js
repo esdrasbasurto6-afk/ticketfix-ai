@@ -335,4 +335,5 @@ app.listen(PORT, async () => {
     console.log("Inicializando sistema TicketFix AI conversacional...");
     await entrenarRedes();
     console.log(`🚀 Servidor híbrido corriendo y escuchando en http://localhost:${PORT}`);
+    console.log("Modelo configurado actualmente:", OLLAMA_MODEL);
 });
