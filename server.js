@@ -5,6 +5,8 @@ const express = require('express');
 const path = require('path');
 const { entrenarRedes, predecirTicket } = require('./neural.js');
 const { clasificarConfirmacion } = require('./utils/confirmacion');
+const { calcularSimilitud } = require('./utils/similitud');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,19 +14,22 @@ const OLLAMA_URL = process.env.OLLAMA_URL || 'http://127.0.0.1:11434';
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'qwen2.5';
 const systemPrompt = require('./prompt');
 
+const LOG_TICKETS_PATH = path.join(__dirname, 'logs', 'tickets_cerrados.jsonl');
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ---------------------------------------------------------
 // ESTADO POR SESIÓN (en memoria — para producción usar Redis)
 // ---------------------------------------------------------
-// sessionId -> { pasosDeSolucionDados: number, dispositivoConfirmado: string|null, clasificacionInicial: {categoria, prioridad}|null }
+// sessionId -> { pasosDeSolucionDados: number, pasosTextos: string[], dispositivoConfirmado: string|null, clasificacionInicial: {categoria, prioridad}|null }
 const estadosPorSesion = new Map();
 
 function obtenerOCrearEstado(sessionId) {
     if (!estadosPorSesion.has(sessionId)) {
         estadosPorSesion.set(sessionId, {
             pasosDeSolucionDados: 0,
+            pasosTextos: [], // guarda el texto de cada paso ya dado, para detectar repeticiones
             dispositivoConfirmado: null,
             clasificacionInicial: null
         });
@@ -37,6 +42,20 @@ setInterval(() => {
     // Si quieres expirar sesiones inactivas, aquí podrías guardar un timestamp por sesión y filtrar.
     // Por ahora, con volumen bajo de un demo/interno, un Map simple es suficiente.
 }, 1000 * 60 * 60);
+
+// Función simple: agrega una línea al archivo de logs (formato JSONL = un JSON por línea)
+function registrarTicketCerrado(datos) {
+    try {
+        const carpetaLogs = path.dirname(LOG_TICKETS_PATH);
+        if (!fs.existsSync(carpetaLogs)) {
+            fs.mkdirSync(carpetaLogs, { recursive: true });
+        }
+        const linea = JSON.stringify(datos) + '\n';
+        fs.appendFileSync(LOG_TICKETS_PATH, linea, 'utf8');
+    } catch (err) {
+        console.error('⚠️ No se pudo guardar el log del ticket:', err);
+    }
+}
 
 app.get('/api/health', (req, res) => {
     res.json({ ok: true, model: OLLAMA_MODEL });
@@ -87,6 +106,10 @@ app.post('/api/agent', async (req, res) => {
         // ---------------------------------------------------------
         // FASE 2: LLM OLLAMA — usamos el contador de estado real, no mensajes de usuario
         // ---------------------------------------------------------
+        const listaPasosPrevios = estado.pasosTextos.length > 0
+            ? estado.pasosTextos.map((p, i) => `  ${i + 1}. "${p}"`).join('\n')
+            : '  (ninguno todavía)';
+
         const messagesParaOllama = [
             { role: 'system', content: systemPrompt },
             {
@@ -96,7 +119,9 @@ app.post('/api/agent', async (req, res) => {
 - Prioridad FIJA (determinada por clasificador, NO la cambies): "${clasificacion.prioridad}"
 - Dispositivo ya confirmado en esta sesión: ${estado.dispositivoConfirmado || "NINGUNO - si el usuario no lo ha dicho aún en este mensaje, tu única acción es preguntarlo"}
 - PASOS DE SOLUCIÓN REALES YA DADOS (sin contar preguntas de diagnóstico): ${estado.pasosDeSolucionDados}
-- REGLA MATEMÁTICA: Si pasosDeSolucionDados < 3, TIENES PROHIBIDO usar estado_ticket "Escalado"; da un nuevo paso distinto. Si pasosDeSolucionDados >= 3 y el usuario sigue sin resolver, DEBES usar "Escalado".
+- PASOS YA INTENTADOS (NO repitas ninguno de estos, ni siquiera reformulado con sinónimos o cambiando detalles menores como "segundos" por "minutos"):
+${listaPasosPrevios}
+- REGLA MATEMÁTICA: Si pasosDeSolucionDados < 3, TIENES PROHIBIDO usar estado_ticket "Escalado"; da un nuevo paso DISTINTO a los ya intentados. Si pasosDeSolucionDados >= 3 y el usuario sigue sin resolver, DEBES usar "Escalado".
 ${pistaConfirmacion}
 - Recuerda incluir SIEMPRE "es_paso_de_solucion" (true solo si diste una instrucción técnica accionable en este turno; false si preguntaste el equipo, rechazaste el tema, cerraste el ticket, o pediste confirmación de éxito) y "dispositivo_detectado" (string con el equipo si el usuario lo mencionó en su ÚLTIMO mensaje, o null).`
             },
@@ -143,24 +168,38 @@ ${pistaConfirmacion}
 
         // ---------------------------------------------------------
         // FASE 3: ACTUALIZAR ESTADO DE SESIÓN CON LO QUE DIJO EL LLM
-        // (esto es lo que reemplaza el conteo defectuoso de antes)
         // ---------------------------------------------------------
         if (respuestaJSON.dispositivo_detectado && !estado.dispositivoConfirmado) {
             estado.dispositivoConfirmado = respuestaJSON.dispositivo_detectado;
         }
 
+        const yaTeniamos3OMasPasos = estado.pasosDeSolucionDados >= 3;
+
+        // Detectamos si el paso que el LLM acaba de dar es muy parecido a uno anterior
+        let esRepeticion = false;
         if (respuestaJSON.estado_ticket === "Abierto" && respuestaJSON.es_paso_de_solucion === true) {
-            estado.pasosDeSolucionDados += 1;
+            esRepeticion = estado.pasosTextos.some(
+                pasoAnterior => calcularSimilitud(pasoAnterior, respuestaJSON.respuesta_chat) >= 0.55
+            );
         }
 
-        // Forzamos coherencia: si el propio server ya sabe que van >=3 pasos y el LLM no escaló, lo anulamos.
-        // (red de seguridad extra por si el LLM ignora la instrucción)
-        if (estado.pasosDeSolucionDados >= 3 &&
-            respuestaJSON.estado_ticket === "Abierto" &&
-            respuestaJSON.es_paso_de_solucion === true) {
-            console.log("⚠️ Auditor: 3+ pasos dados y el LLM intentó dar un 4to en vez de escalar. Forzando escalamiento.");
+        if (esRepeticion) {
+            console.log("⚠️ Auditor: el LLM repitió un paso ya intentado (alta similitud con uno anterior). Forzando escalamiento.");
             respuestaJSON.estado_ticket = "Escalado";
             respuestaJSON.requiere_tecnico = true;
+            respuestaJSON.es_paso_de_solucion = false;
+            respuestaJSON.respuesta_chat = "No encontramos una alternativa distinta que puedas hacer desde tu equipo para este problema. Voy a derivar tu caso a un técnico humano para que lo revise a fondo.";
+        } else if (yaTeniamos3OMasPasos &&
+                respuestaJSON.estado_ticket === "Abierto" &&
+                respuestaJSON.es_paso_de_solucion === true) {
+            console.log("⚠️ Auditor: ya había 3+ pasos previos y el LLM intentó dar otro en vez de escalar. Forzando escalamiento.");
+            respuestaJSON.estado_ticket = "Escalado";
+            respuestaJSON.requiere_tecnico = true;
+            respuestaJSON.es_paso_de_solucion = false;
+            respuestaJSON.respuesta_chat = "Ya intentamos varias alternativas desde tu equipo sin éxito. Voy a derivar tu caso a un técnico humano para que lo revise a fondo.";
+        } else if (respuestaJSON.estado_ticket === "Abierto" && respuestaJSON.es_paso_de_solucion === true) {
+            estado.pasosDeSolucionDados += 1;
+            estado.pasosTextos.push(respuestaJSON.respuesta_chat);
         }
 
         // AUDITOR: si detectamos "SOLO_EJECUCION" pero el LLM de todos modos marcó "Resuelto", lo corregimos
@@ -171,10 +210,6 @@ ${pistaConfirmacion}
             respuestaJSON.requiere_tecnico = false;
             respuestaJSON.respuesta_chat = "Perfecto, gracias por confirmar que hiciste el paso. Ahora dime: ¿el problema ya quedó resuelto, o todavía sigue igual?";
         }
-
-        // Siempre forzamos la categoría/prioridad del clasificador, sin importar qué devolvió el LLM
-        respuestaJSON.categoria = clasificacion.categoria !== 'Desconocido' ? clasificacion.categoria : (respuestaJSON.categoria || 'Desconocido');
-        respuestaJSON.prioridad = clasificacion.prioridad !== 'Ninguna' ? clasificacion.prioridad : (respuestaJSON.prioridad || 'Media');
 
         // ---------------------------------------------------------
         // FASE 4: SANITIZACIÓN FINAL
@@ -205,6 +240,20 @@ ${pistaConfirmacion}
                 .replace(/\\t/g, ' ')
                 .replace(/\n/g, ' ')
                 .replace(/\t/g, ' ');
+        }
+
+        // Guardamos el ticket cerrado como futuro dato de entrenamiento
+        if (respuestaJSON.estado_ticket === "Resuelto" || respuestaJSON.estado_ticket === "Escalado") {
+            const primerMensajeUsuario = historialUser.find(m => m.role === 'user')?.content || "";
+            registrarTicketCerrado({
+                timestamp: new Date().toISOString(),
+                sessionId,
+                primerMensaje: primerMensajeUsuario,
+                categoriaAsignada: respuestaJSON.categoria,
+                prioridadAsignada: respuestaJSON.prioridad,
+                estadoFinal: respuestaJSON.estado_ticket,
+                totalMensajesUsuario: historialUser.filter(m => m.role === 'user').length
+            });
         }
 
         // Si el ticket se cerró, liberamos el estado de sesión (opcional — o consérvalo para logs/analytics)
